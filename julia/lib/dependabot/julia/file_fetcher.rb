@@ -45,7 +45,7 @@ module Dependabot
         fetched_files
       end
 
-      sig { params(workspace_info: T::Hash[String, T.untyped]).void }
+      sig { params(workspace_info: T::Hash[String, Object]).void }
       def validate_workspace_info!(workspace_info)
         error_value = T.cast(workspace_info["error"], T.nilable(String))
         has_error = !error_value.nil?
